@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Begegnungen an der Neiße · Spotkania nad Nysą · 02.–03.09.2026</title>
+  <meta name="description" content="Deutsch-polnische Fachtagung am IBZ St. Marienthal, Ostritz · 02. & 03. September 2026" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Reset & Tokens ──────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #1C2E45;
+      --navy-mid:  #243650;
+      --navy-light:#2E4770;
+      --terra:     #C06045;
+      --terra-lt:  #D4785E;
+      --cream:     #F7F4EF;
+      --sand:      #EDE8DF;
+      --white:     #FFFFFF;
+      --text:      #1C2031;
+      --text-mid:  #4A4F63;
+      --border:    rgba(28, 46, 69, 0.15);
+      --border-lt: rgba(28, 46, 69, 0.08);
+
+      --ff-serif: 'Cormorant Garamond', Georgia, serif;
+      --ff-sans:  'Jost', system-ui, sans-serif;
+
+      --space-xs:  0.5rem;
+      --space-sm:  1rem;
+      --space-md:  2rem;
+      --space-lg:  4rem;
+      --space-xl:  6rem;
+      --space-2xl: 9rem;
+
+      --max-w: 1120px;
+      --radius: 2px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--ff-sans);
+      font-weight: 300;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Utilities ───────────────────────────────────────── */
+    .container {
+      max-width: var(--max-w);
+      margin-inline: auto;
+      padding-inline: 2rem;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--ff-sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 1.25rem;
+    }
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 2.5rem;
+      height: 1px;
+      background: var(--terra);
+      flex-shrink: 0;
+    }
+
+    .bilingual {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1em;
+    }
+    .bilingual .pl {
+      font-style: italic;
+      color: var(--text-mid);
+    }
+
+    .divider {
+      width: 3rem;
+      height: 1px;
+      background: var(--terra);
+      margin: 1.75rem 0;
+    }
+
+    /* ── Navigation ──────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.35s, padding 0.35s, box-shadow 0.35s;
+    }
+    .nav.scrolled {
+      background: rgba(28, 46, 69, 0.97);
+      padding: 0.85rem 2rem;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.18);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--white);
+    }
+    .nav-logo-icon {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+    }
+    .nav-logo-text {
+      font-family: var(--ff-sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.3;
+      opacity: 0.92;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white) !important;
+      border: 1px solid rgba(255,255,255,0.45);
+      padding: 0.55rem 1.25rem;
+      border-radius: var(--radius);
+      transition: background 0.2s, border-color 0.2s !important;
+    }
+    .nav-cta:hover {
+      background: rgba(255,255,255,0.12) !important;
+      border-color: rgba(255,255,255,0.7) !important;
+    }
+
+    /* ── Hero ────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('ETF-4500px-172-von-228.jpg');
+      background-size: cover;
+      background-position: center 40%;
+      transform: scale(1.04);
+      transition: transform 8s ease-out;
+    }
+    .hero-bg.loaded { transform: scale(1); }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        165deg,
+        rgba(14, 24, 42, 0.55) 0%,
+        rgba(20, 34, 60, 0.72) 40%,
+        rgba(12, 20, 38, 0.88) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 0 2rem 7rem;
+      max-width: calc(var(--max-w) + 4rem);
+      margin-inline: auto;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .hero-meta-line {
+      width: 2.5rem;
+      height: 1px;
+      background: var(--terra);
+    }
+    .hero-meta-text {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .hero-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 300;
+      line-height: 1.08;
+      color: var(--white);
+      margin-bottom: 0.2em;
+    }
+    .hero-title-pl {
+      font-family: var(--ff-serif);
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-info {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .hero-date {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: 0.03em;
+    }
+    .hero-location {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+    .hero-lang {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      border-left: 1px solid rgba(255,255,255,0.2);
+      padding-left: 2.5rem;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      right: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .hero-scroll-line {
+      width: 1px;
+      height: 3rem;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+      animation: scrollDown 2s ease-in-out infinite;
+    }
+    @keyframes scrollDown {
+      0%, 100% { transform: scaleY(1); opacity: 1; }
+      50% { transform: scaleY(0.6); opacity: 0.5; }
+    }
+
+    /* ── Section Frames ──────────────────────────────────── */
+    section { padding: var(--space-xl) 0; }
+    section:nth-child(even) { background: var(--white); }
+
+    .section-header {
+      max-width: 680px;
+      margin-bottom: 4rem;
+    }
+    .section-header.centered {
+      margin-inline: auto;
+      text-align: center;
+    }
+    .section-header.centered .eyebrow {
+      justify-content: center;
+    }
+    .section-header.centered .eyebrow::before { display: none; }
+
+    h2 {
+      font-family: var(--ff-serif);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--navy);
+    }
+    h3 {
+      font-family: var(--ff-serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--navy);
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-mid);
+      margin-top: 1.25rem;
+    }
+
+    /* ── Über die Tagung ─────────────────────────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-quote {
+      font-family: var(--ff-serif);
+      font-size: 1.55rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--navy);
+      border-left: 2px solid var(--terra);
+      padding-left: 1.75rem;
+      margin-top: 3rem;
+    }
+
+    .about-image {
+      position: relative;
+    }
+    .about-image img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+    .about-image-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.25rem 1.5rem;
+      background: linear-gradient(to top, rgba(14,24,42,0.85), transparent);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+    }
+
+    /* ── Arbeitsstränge ──────────────────────────────────── */
+    .tracks { background: var(--navy) !important; }
+    .tracks .eyebrow { color: var(--terra-lt); }
+    .tracks .eyebrow::before { background: var(--terra-lt); }
+    .tracks h2 { color: var(--white); }
+    .tracks .lead { color: rgba(255,255,255,0.65); }
+
+    .tracks-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5px;
+      margin-top: 3.5rem;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .track-card {
+      background: rgba(255,255,255,0.04);
+      padding: 2.5rem;
+      transition: background 0.25s;
+      cursor: default;
+    }
+    .track-card:hover { background: rgba(255,255,255,0.08); }
+
+    .track-number {
+      font-family: var(--ff-serif);
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.12);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .track-title {
+      font-family: var(--ff-serif);
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+    .track-title-pl {
+      font-family: var(--ff-serif);
+      font-size: 1rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0;
+    }
+
+    /* ── Referenten ──────────────────────────────────────── */
+    .speakers-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-bottom: 4rem;
+    }
+
+    .keynote-card {
+      background: var(--navy);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .keynote-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--terra);
+    }
+    .keynote-badge {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terra-lt);
+      margin-bottom: 1.25rem;
+    }
+    .keynote-name {
+      font-family: var(--ff-serif);
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .keynote-topic {
+      font-family: var(--ff-serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.4;
+    }
+
+    .speakers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-bottom: 2.5rem;
+    }
+
+    .speaker-cell {
+      background: var(--white);
+      padding: 1.75rem 1.5rem;
+      border-top: 2px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .speaker-cell:hover { border-top-color: var(--terra); }
+
+    .speaker-track {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 0.75rem;
+    }
+    .speaker-name {
+      font-family: var(--ff-serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+    .speaker-org {
+      font-size: 0.78rem;
+      color: var(--text-mid);
+    }
+    .speaker-placeholder {
+      color: rgba(28,46,69,0.35);
+      font-style: italic;
+    }
+
+    .speakers-note {
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      font-style: italic;
+      text-align: center;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Programm ────────────────────────────────────────── */
+    .program { background: var(--cream) !important; }
+
+    .program-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .tab-btn {
+      font-family: var(--ff-sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      background: none;
+      border: none;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .tab-btn.active {
+      color: var(--navy);
+      border-bottom-color: var(--terra);
+    }
+    .tab-btn:hover:not(.active) {
+      color: var(--navy);
+    }
+
+    .day-panel { display: none; }
+    .day-panel.active { display: block; }
+
+    .day-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .day-label {
+      font-family: var(--ff-serif);
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--navy);
+    }
+    .day-label-pl {
+      font-family: var(--ff-serif);
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--text-mid);
+    }
+    .day-date {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-left: auto;
+    }
+
+    .schedule {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .schedule-item {
+      display: grid;
+      grid-template-columns: 8rem 1fr;
+      gap: 2rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border-lt);
+      align-items: start;
+    }
+    .schedule-item:last-child { border-bottom: none; }
+
+    .schedule-time {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--text-mid);
+      padding-top: 0.2rem;
+    }
+
+    .schedule-body {}
+    .schedule-de {
+      font-family: var(--ff-serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.4;
+    }
+    .schedule-pl {
+      font-family: var(--ff-serif);
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--text-mid);
+      line-height: 1.4;
+      margin-top: 0.2rem;
+    }
+
+    .schedule-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .tag {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border: 1px solid var(--border);
+      color: var(--text-mid);
+    }
+    .tag-highlight {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+
+    /* parallel items */
+    .schedule-parallel {
+      grid-template-columns: 8rem 1fr 1fr;
+    }
+    .schedule-parallel .schedule-col {
+      border-left: 1px solid var(--border-lt);
+      padding-left: 1.5rem;
+    }
+    .col-label {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── Informationen ───────────────────────────────────── */
+    .info { background: var(--white) !important; }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .info-block {
+      margin-bottom: 2.5rem;
+    }
+    .info-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 0.6rem;
+    }
+    .info-value {
+      font-family: var(--ff-serif);
+      font-size: 1.15rem;
+      color: var(--navy);
+      line-height: 1.5;
+    }
+    .info-value a {
+      color: var(--navy);
+      transition: color 0.2s;
+    }
+    .info-value a:hover { color: var(--terra); }
+    .info-sub {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      margin-top: 0.25rem;
+    }
+
+    .cta-block {
+      background: var(--navy);
+      padding: 3rem;
+      position: sticky;
+      top: 6rem;
+    }
+    .cta-block h3 {
+      color: var(--white);
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .cta-block .lead {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: var(--ff-sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: var(--radius);
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--terra);
+      color: var(--white);
+      border-color: var(--terra);
+    }
+    .btn-primary:hover {
+      background: var(--terra-lt);
+      border-color: var(--terra-lt);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.4);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.7);
+    }
+
+    .cta-contact {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+    }
+    .cta-contact a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .cta-contact a:hover { color: var(--white); }
+
+    /* ── Anreise ─────────────────────────────────────────── */
+    .anreise { background: var(--cream) !important; }
+    .map-placeholder {
+      width: 100%;
+      height: 360px;
+      background: var(--sand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 2rem;
+    }
+    .map-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.7;
+    }
+    .map-pin {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+    .map-pin-dot {
+      width: 16px;
+      height: 16px;
+      background: var(--terra);
+      border-radius: 50%;
+      box-shadow: 0 0 0 6px rgba(192,96,69,0.25), 0 0 0 12px rgba(192,96,69,0.1);
+    }
+    .map-pin-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: var(--white);
+      padding: 0.4rem 0.85rem;
+    }
+
+    /* ── Partner ─────────────────────────────────────────── */
+    .partner { background: var(--white) !important; padding: var(--space-lg) 0; }
+    .partner-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+    .partner-img {
+      height: 48px;
+      object-fit: contain;
+      opacity: 0.65;
+      transition: opacity 0.2s;
+      filter: grayscale(1);
+    }
+    .partner-img:hover { opacity: 1; filter: none; }
+
+    .partner-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Footer ──────────────────────────────────────────── */
+    footer {
+      background: var(--navy);
+      padding: 3rem 0;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .footer-brand {
+      font-family: var(--ff-serif);
+      font-size: 1.15rem;
+      color: var(--white);
+    }
+    .footer-brand span {
+      display: block;
+      font-size: 0.7rem;
+      font-family: var(--ff-sans);
+      font-style: normal;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 0.25rem;
+    }
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.8); }
+
+    .footer-meta {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+      line-height: 1.6;
+    }
+    .footer-meta a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+    }
+
+    /* ── Interreg strip ──────────────────────────────────── */
+    .interreg-strip {
+      background: #003DA5;
+      padding: 0.6rem 2rem;
+      text-align: center;
+    }
+    .interreg-strip p {
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.75);
+    }
+    .interreg-strip strong { color: var(--white); }
+
+    /* ── IBZ SVG Logo ────────────────────────────────────── */
+    .ibz-icon svg { fill: currentColor; }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .about-grid,
+      .info-grid,
+      .speakers-intro { grid-template-columns: 1fr; gap: 3rem; }
+      .tracks-grid { grid-template-columns: 1fr; }
+      .speakers-grid { grid-template-columns: repeat(2, 1fr); }
+      .schedule-item { grid-template-columns: 6rem 1fr; }
+      .schedule-parallel { grid-template-columns: 6rem 1fr; }
+      .schedule-parallel .schedule-col:last-child { display: none; }
+      .nav-links { display: none; }
+      .about-image { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .speakers-grid { grid-template-columns: 1fr; }
+      .hero-lang { display: none; }
+      .schedule-item { grid-template-columns: 5rem 1fr; gap: 1rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ── Navigation ─────────────────────────────────────────── -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon ibz-icon">
+      <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="1.4">
+        <rect x="3" y="3" width="30" height="30" rx="0" stroke-opacity="0.6"/>
+        <path d="M10 18 L18 10 L26 18 L26 26 L10 26 Z" stroke-opacity="0.85"/>
+        <circle cx="18" cy="18" r="2.5" fill="white" stroke="none"/>
+      </svg>
+    </div>
+    <div class="nav-logo-text">Stiftung IBZ<br>St. Marienthal</div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#tagung">Zur Tagung</a></li>
+    <li><a href="#referenten">Referent/-innen</a></li>
+    <li><a href="#programm">Programm</a></li>
+    <li><a href="#informationen">Informationen</a></li>
+    <li><a href="mailto:info@ibz-marienthal.de" class="nav-cta">Anmeldung</a></li>
+  </ul>
+</nav>
+
+
+<!-- ── Hero ───────────────────────────────────────────────── -->
+<section class="hero" id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content container">
+    <div class="hero-meta">
+      <div class="hero-meta-line"></div>
+      <span class="hero-meta-text">Deutsch-polnische Tagung · Polsko-niemiecka konferencja</span>
+    </div>
+
+    <h1 class="hero-title">Begegnungen an<br>der Neiße</h1>
+    <p class="hero-title-pl">Spotkania nad Nysą</p>
+
+    <div class="hero-info">
+      <span class="hero-date"><strong>02. &amp; 03. September 2026</strong></span>
+      <span class="hero-location">Ostritz · St. Marienthal</span>
+      <span class="hero-lang">DE / PL · Simultandolmetschen</span>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+
+<!-- ── Zur Tagung ─────────────────────────────────────────── -->
+<section id="tagung">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="eyebrow">Zur Tagung · O konferencji</div>
+        <h2>Im Grenzraum<br>gemeinsam handeln</h2>
+        <div class="divider"></div>
+        <p class="lead">
+          Expert/-innen, Praktiker/-innen sowie Entscheidungsträger/-innen aus Deutschland
+          und Polen kommen zusammen, um aktuelle Herausforderungen im Grenzraum zu
+          diskutieren und konkrete Schritte für eine vertiefte Zusammenarbeit zu vereinbaren.
+        </p>
+        <p class="lead" style="margin-top:1rem; font-style: italic; color: var(--text-mid); font-size: 0.95rem;">
+          Eksperci, praktycy oraz decydenci z Niemiec i Polski spotykają się, aby omówić
+          aktualne wyzwania na obszarze przygranicznym i uzgodnić konkretne kroki na rzecz
+          pogłębionej współpracy.
+        </p>
+
+        <blockquote class="about-quote">
+          „Aus zwei Tagen des Austauschs entsteht eine gemeinsame Neiße Agenda — konkrete
+          Schritte für eine vertiefte deutsch-polnische Zusammenarbeit im Grenzraum."
+        </blockquote>
+      </div>
+
+      <div class="about-image">
+        <img src="ETF-4500px-22-von-228.jpg" alt="Klostergelände IBZ St. Marienthal" loading="lazy" />
+        <div class="about-image-caption">Klostergelände · Teren klasztorny — Ostritz, Sachsen</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── Arbeitsstränge ─────────────────────────────────────── -->
+<section class="tracks" id="stränge">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Arbeitsstränge · Bloki tematyczne</div>
+      <h2 style="color:white;">Vier Themenfelder<br>für den Grenzraum</h2>
+      <p class="lead">
+        In zweisprachiger Kleingruppenarbeit und thematischen Panels werden vier
+        zentrale Arbeitsstränge bearbeitet. Das Ziel: eine gemeinsame <em>Neiße&nbsp;Agenda</em>.
+      </p>
+    </div>
+
+    <div class="tracks-grid">
+      <div class="track-card">
+        <div class="track-number">01</div>
+        <div class="track-title">Mobilität &amp; Alltag</div>
+        <div class="track-title-pl">Mobilność i życie codzienne</div>
+      </div>
+      <div class="track-card">
+        <div class="track-number">02</div>
+        <div class="track-title">Sprache, Bildung &amp; Verständigung</div>
+        <div class="track-title-pl">Język, edukacja i porozumienie</div>
+      </div>
+      <div class="track-card">
+        <div class="track-number">03</div>
+        <div class="track-title">Transformation &amp; Regionalentwicklung</div>
+        <div class="track-title-pl">Transformacja i rozwój regionalny</div>
+      </div>
+      <div class="track-card">
+        <div class="track-number">04</div>
+        <div class="track-title">Kultur &amp; demokratische Nachbarschaft</div>
+        <div class="track-title-pl">Kultura i demokratyczne sąsiedztwo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── Referenten ─────────────────────────────────────────── -->
+<section id="referenten">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Referent/-innen &amp; Expert/-innen · Referenci i eksperci</div>
+      <h2>Stimmen der Tagung</h2>
+    </div>
+
+    <div class="speakers-intro">
+      <div class="keynote-card">
+        <div class="keynote-badge">Eröffnungsreferat · Wykład inauguracyjny</div>
+        <div class="keynote-name">Beatrix Flatt</div>
+        <div class="keynote-topic">
+          „Grenzraum" — eine Annäherung<br>
+          <span style="opacity:0.75;">„Obszar przygraniczny" — zbliżenie</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="eyebrow">Tag 2 · Drugi dzień</div>
+        <h3 style="margin-bottom:0.75rem;">Kultusminister Conrad Clemens</h3>
+        <p class="lead" style="font-size:0.9rem; margin-top:0;">
+          Referat zur aktuellen Lage, anschließend Podiumsdiskussion mit
+          Vertreter/-innen aller vier Panels.
+        </p>
+        <p class="lead" style="font-size:0.82rem; color:var(--text-mid); font-style:italic; margin-top:0.5rem;">
+          Referat o aktualnej sytuacji, następnie dyskusja panelowa
+          z przedstawiciel(k)ami wszystkich czterech paneli.
+        </p>
+      </div>
+    </div>
+
+    <div class="speakers-grid">
+      <!-- Mobilität & Alltag -->
+      <div class="speaker-cell">
+        <div class="speaker-track">01 · Mobilität &amp; Alltag</div>
+        <div class="speaker-name speaker-placeholder">Vorname Nachname</div>
+        <div class="speaker-org speaker-placeholder">Institution · Instytucja</div>
+      </div>
+      <div class="speaker-cell">
+        <div class="speaker-track">01 · Mobilität &amp; Alltag</div>
+        <div class="speaker-name speaker-placeholder">Vorname Nachname</div>
+        <div class="speaker-org speaker-placeholder">Institution · Instytucja</div>
+      </div>
+
+      <!-- Sprache, Bildung -->
+      <div class="speaker-cell">
+        <div class="speaker-track">02 · Sprache, Bildung</div>
+        <div class="speaker-name speaker-placeholder">Vorname Nachname</div>
+        <div class="speaker-org speaker-placeholder">Institution · Instytucja</div>
+      </div>
+      <div class="speaker-cell">
+        <div class="speaker-track">02 · Sprache, Bildung</div>
+        <div class="speaker-name speaker-placeholder">Vorname Nachname</div>
+        <div class="speaker-org speaker-placeholder">Institution · Instytucja</div>
+      </div>
+
+      <!-- Transformation -->
+      <div class="speaker-cell">
+        <div class="speaker-track">03 · Transformation</div>
+        <div class="speaker-name speaker-placeholder">Vorname Nachname</div>
+        <div class="speaker-org speaker-placeholder">Institution · Instytucja</div>
+      </div>
+      <div class="speaker-cell">
+        <div class="speaker-track">03 · Transformation</div>
+        <div class="speaker-name speaker-placeholder">Vorname Nachname</div>
+        <div class="speaker-org speaker-placeholder">Institution · Instytucja</div>
+      </div>
+
+      <!-- Kultur -->
+      <div class="speaker-cell">
+        <div class="speaker-track">04 · Kultur &amp; Demokratie</div>
+        <div class="speaker-name speaker-placeholder">Vorname Nachname</div>
+        <div class="speaker-org speaker-placeholder">Institution · Instytucja</div>
+      </div>
+      <div class="speaker-cell">
+        <div class="speaker-track">04 · Kultur &amp; Demokratie</div>
+        <div class="speaker-name speaker-placeholder">Vorname Nachname</div>
+        <div class="speaker-org speaker-placeholder">Institution · Instytucja</div>
+      </div>
+    </div>
+
+    <p class="speakers-note">
+      Die vollständige Liste der Referent/-innen wird in Kürze ergänzt. ·
+      Pełna lista prelegentów zostanie wkrótce uzupełniona.
+    </p>
+  </div>
+</section>
+
+
+<!-- ── Programm ───────────────────────────────────────────── -->
+<section class="program" id="programm">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Programm · Program</div>
+      <h2>Zwei Tage im Dialog</h2>
+    </div>
+
+    <div class="program-tabs">
+      <button class="tab-btn active" onclick="showDay(1)">
+        Tag 1 · Mittwoch, 02.09.
+      </button>
+      <button class="tab-btn" onclick="showDay(2)">
+        Tag 2 · Donnerstag, 03.09.
+      </button>
+    </div>
+
+    <!-- TAG 1 -->
+    <div class="day-panel active" id="day1">
+      <div class="day-header">
+        <span class="day-label">Erster Tag</span>
+        <span class="day-label-pl">Pierwszy dzień</span>
+        <span class="day-date">Mittwoch · Środa · 02.09.2026</span>
+      </div>
+
+      <div class="schedule">
+        <div class="schedule-item">
+          <div class="schedule-time">ab 9:00</div>
+          <div class="schedule-body">
+            <div class="schedule-de">Come Together mit Kaffee</div>
+            <div class="schedule-pl">Powitanie przy kawie</div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">9:30</div>
+          <div class="schedule-body">
+            <div class="schedule-de">Eröffnung der Tagung</div>
+            <div class="schedule-pl">Otwarcie konferencji</div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">10:00 – 11:00</div>
+          <div class="schedule-body">
+            <div class="schedule-de">Eröffnungsreferat: Beatrix Flatt zu „Grenzraum", anschließend Diskussion</div>
+            <div class="schedule-pl">Wykład inauguracyjny: Beatrix Flatt o „obszarze przygranicznym", następnie dyskusja</div>
+            <div class="schedule-tags">
+              <span class="tag tag-highlight">Plenum</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">11:00 – 13:00</div>
+          <div class="schedule-body">
+            <div class="schedule-de">Impulsreferate der Panelleitungen und Austausch</div>
+            <div class="schedule-pl">Referaty wprowadzające prowadzących panele i wymiana</div>
+            <div class="schedule-tags">
+              <span class="tag">01 Mobilität &amp; Alltag</span>
+              <span class="tag">02 Sprache &amp; Bildung</span>
+              <span class="tag">03 Transformation</span>
+              <span class="tag">04 Kultur &amp; Demokratie</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">13:00</div>
+          <div class="schedule-body">
+            <div class="schedule-de">Gemeinsames Mittagessen</div>
+            <div class="schedule-pl">Wspólny obiad</div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">14:00 – 16:00</div>
+          <div class="schedule-body">
+            <div class="schedule-de">Thematische Panels — parallele, zweisprachige Kleingruppenarbeit</div>
+            <div class="schedule-pl">Panele tematyczne — równoległa, dwujęzyczna praca w grupach</div>
+            <div class="schedule-tags">
+              <span class="tag">01 Mobilität &amp; Alltag</span>
+              <span class="tag">02 Sprache &amp; Bildung</span>
+              <span class="tag">03 Transformation</span>
+              <span class="tag">04 Kultur &amp; Demokratie</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">16:00 – 18:00</div>
+          <div class="schedule-body">
+            <div class="schedule-de">Vorstellung der Panelergebnisse und moderierte Plenumsdiskussion</div>
+            <div class="schedule-pl">Prezentacja wyników paneli i moderowana dyskusja plenarna</div>
+            <div class="schedule-tags">
+              <span class="tag tag-highlight">Plenum</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">18:00 – 19:00</div>
+          <div class="schedule-body">
+            <div class="schedule-de">Gemeinsames Abendessen</div>
+            <div class="schedule-pl">Wspólna kolacja</div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">19:00 – 20:00</div>
+          <div class="schedule-body">
+            <div class="schedule-de">Orgelkonzert in der Klosterkirche, parallel Ausstellung „Emil Krebs" (DE/PL)</div>
+            <div class="schedule-pl">Koncert organowy w kościele klasztornym, równolegle wystawa „Emil Krebs" (DE/PL)</div>
+            <div class="schedule-tags">
+              <span class="tag">Kulturprogramm</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">20:00 – 22:00</div>
+          <div class="schedule-body">
+            <div class="schedule-de">Offener Begegnungsabend mit Musik und Gesprächen</div>
+            <div class="schedule-pl">Otwarty wieczór spotkań z muzyką i rozmowami</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAG 2 -->
+    <div class="day-panel" id="day2">
+      <div class="day-header">
+        <span class="day-label">Zweiter Tag</span>
+        <span class="day-label-pl">Drugi dzień</span>
+        <span class="day-date">Donnerstag · Czwartek · 03.09.2026</span>
+      </div>
+
+      <div class="schedule">
+        <div class="schedule-item">
+          <div class="schedule-time">8:00</div>
+          <div class="schedule-body">
+            <div class="schedule-de">Frühstück</div>
+            <div class="schedule-pl">Śniadanie</div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">bis 10:00</div>
+          <div class="schedule-body">
+            <div class="schedule-de">Auschecken (optional)</div>
+            <div class="schedule-pl">Wymeldowanie (opcjonalnie)</div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">10:00 – 12:00</div>
+          <div class="schedule-body">
+            <div class="schedule-de">Referat zur aktuellen Lage: Kultusminister Conrad Clemens, anschließend Gespräch</div>
+            <div class="schedule-pl">Referat o aktualnej sytuacji: minister Conrad Clemens, następnie rozmowa</div>
+            <div class="schedule-tags">
+              <span class="tag tag-highlight">Plenum</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">12:00 – 13:00</div>
+          <div class="schedule-body">
+            <div class="schedule-de">Gemeinsames Mittagessen</div>
+            <div class="schedule-pl">Wspólny obiad</div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">13:00 – 15:00</div>
+          <div class="schedule-body">
+            <div class="schedule-de">Podiumsdiskussion mit dem Minister — mit Vertreter/-innen aller vier Panels</div>
+            <div class="schedule-pl">Dyskusja panelowa z udziałem ministra — z przedstawiciel(k)ami wszystkich czterech paneli</div>
+            <div class="schedule-tags">
+              <span class="tag tag-highlight">Plenum</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">15:00 – 16:30</div>
+          <div class="schedule-body">
+            <div class="schedule-de">Panels — Vertiefung und Transfer</div>
+            <div class="schedule-pl">Panele — pogłębienie i transfer</div>
+            <div class="schedule-tags">
+              <span class="tag">Pilot-Steckbriefe ausfüllen</span>
+              <span class="tag">Neiße-Agenda vorbereiten</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">16:30 – 17:00</div>
+          <div class="schedule-body">
+            <div class="schedule-de">Kaffeepause</div>
+            <div class="schedule-pl">Przerwa kawowa</div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">17:00 – 18:00</div>
+          <div class="schedule-body">
+            <div class="schedule-de">Vorstellung der Panelergebnisse und Verabschiedung der Neiße-Agenda im Plenum</div>
+            <div class="schedule-pl">Prezentacja wyników paneli i przyjęcie Agendy Nyskiej na plenum</div>
+            <div class="schedule-tags">
+              <span class="tag tag-highlight">Plenum</span>
+              <span class="tag">Neiße-Agenda</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-item">
+          <div class="schedule-time">18:00</div>
+          <div class="schedule-body">
+            <div class="schedule-de">Zusammenfassung und Feedback, anschließend Abreise</div>
+            <div class="schedule-pl">Podsumowanie i runda informacji zwrotnej, następnie wyjazd</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ── Informationen & Anmeldung ──────────────────────────── -->
+<section class="info" id="informationen">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Informationen &amp; Anmeldung · Informacje i zgłoszenia</div>
+      <h2>Gut zu wissen</h2>
+    </div>
+
+    <div class="info-grid">
+      <div>
+        <div class="info-block">
+          <div class="info-label">Veranstaltungsort · Miejsce</div>
+          <div class="info-value">
+            Stiftung IBZ St. Marienthal<br>
+            St. Marienthal 10<br>
+            02899 Ostritz, Sachsen
+          </div>
+          <div class="info-sub">Klostergelände · Teren klasztorny</div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-label">Termin · Termin</div>
+          <div class="info-value">02. &amp; 03. September 2026</div>
+          <div class="info-sub">
+            Mittwoch und Donnerstag · Środa i czwartek<br>
+            Beginn 9:00 Uhr (Come Together) · Początek o godz. 9:00
+          </div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-label">Tagungssprachen · Języki konferencji</div>
+          <div class="info-value">Deutsch und Polnisch</div>
+          <div class="info-sub">mit Simultandolmetschen · z tłumaczeniem symultanicznym</div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-label">Kontakt · Kontakt</div>
+          <div class="info-value">
+            <a href="tel:+4935823770">+49 (0) 35823 77-0</a><br>
+            <a href="mailto:info@ibz-marienthal.de">info@ibz-marienthal.de</a>
+          </div>
+          <div class="info-sub">
+            <a href="https://www.ibz-marienthal.de" target="_blank" rel="noopener">www.ibz-marienthal.de</a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="cta-block">
+          <h3>Zur Tagung anmelden</h3>
+          <div class="bilingual pl" style="color:rgba(255,255,255,0.55); font-family:var(--ff-serif); font-style:italic; font-size:1rem; margin-bottom:1.25rem;">
+            Zapisz się na konferencję
+          </div>
+          <p class="lead">
+            Wir freuen uns auf Ihre Teilnahme und stehen für Rückfragen gern zur Verfügung.
+          </p>
+
+          <a href="mailto:info@ibz-marienthal.de?subject=Anmeldung%20Begegnungen%20an%20der%20Neiße%2002.–03.09.2026"
+             class="btn btn-primary" style="margin-right:0.75rem;">
+            Per E-Mail anmelden
+          </a>
+
+          <div class="cta-contact">
+            Stiftung IBZ St. Marienthal<br>
+            <a href="tel:+4935823770">+49 (0) 35823 77-0</a> ·
+            <a href="mailto:info@ibz-marienthal.de">info@ibz-marienthal.de</a><br>
+            <a href="https://www.ibz-marienthal.de" target="_blank" rel="noopener">www.ibz-marienthal.de</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── Anreise / Lageplan ─────────────────────────────────── -->
+<section class="anreise" id="anreise">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow">Anreise · Dojazd</div>
+      <h2>Wie Sie zu uns kommen</h2>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start;">
+      <div>
+        <div class="info-block">
+          <div class="info-label">Mit dem Auto</div>
+          <div class="info-value" style="font-size:0.95rem; font-family:var(--ff-sans); font-weight:300; line-height:1.6;">
+            A4 → Abfahrt Görlitz, weiter Richtung Ostritz<br>
+            Oder B99 aus Richtung Zittau
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">Mit der Bahn</div>
+          <div class="info-value" style="font-size:0.95rem; font-family:var(--ff-sans); font-weight:300; line-height:1.6;">
+            Bahnhof Ostritz · ca. 10 Min. zu Fuß zum IBZ<br>
+            Verbindung über Görlitz Hbf
+          </div>
+        </div>
+        <div class="info-block">
+          <div class="info-label">GPS-Koordinaten</div>
+          <div class="info-value" style="font-size:0.95rem; font-family:var(--ff-sans); font-weight:300;">
+            51.0185° N, 14.9193° O
+          </div>
+          <div class="info-sub">St. Marienthal 10 · 02899 Ostritz</div>
+        </div>
+
+        <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1.5rem;">
+          <a href="Lageplan IBZ St. Marienthal DE.pdf" class="btn btn-outline"
+             style="color:var(--navy); border-color:var(--border);" download>
+            Lageplan (DE)
+          </a>
+          <a href="Lageplan IBZ St. Marienthal PL.pdf" class="btn btn-outline"
+             style="color:var(--navy); border-color:var(--border);" download>
+            Plan terenu (PL)
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="map-placeholder">
+          <img src="Lageplan.png" alt="Lageplan IBZ St. Marienthal" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── Partner & Förderer ─────────────────────────────────── -->
+<section class="partner">
+  <div class="container">
+    <p class="partner-label">Veranstalter &amp; Projektpartner · Organizatorzy i partnerzy projektu</p>
+    <div class="partner-row">
+      <img src="logo PLSN_final_DE.jpg" alt="PLSN" class="partner-img" />
+      <img src="Kreisau logo.png" alt="Stiftung Kreisau" class="partner-img" />
+    </div>
+  </div>
+</section>
+
+
+<!-- ── Interreg Strip ─────────────────────────────────────── -->
+<div class="interreg-strip">
+  <p>
+    <strong>Gefördert durch Interreg Polska–Sachsen 2021–2027.</strong>
+    Europäischer Fonds für regionale Entwicklung (EFRE).
+    ·
+    Projekt: Niemiecko-polski obszar przygraniczny — spotkania nad Nysą
+  </p>
+</div>
+
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span>Stiftung</span>
+        IBZ St. Marienthal
+      </div>
+
+      <ul class="footer-links">
+        <li><a href="#tagung">Tagung</a></li>
+        <li><a href="#programm">Programm</a></li>
+        <li><a href="#informationen">Anmeldung</a></li>
+        <li><a href="https://www.ibz-marienthal.de" target="_blank" rel="noopener">Website IBZ</a></li>
+      </ul>
+
+      <div class="footer-meta">
+        St. Marienthal 10 · 02899 Ostritz<br>
+        <a href="tel:+4935823770">+49 (0) 35823 77-0</a> ·
+        <a href="mailto:info@ibz-marienthal.de">info@ibz-marienthal.de</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ── Scripts ─────────────────────────────────────────────── -->
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 80);
+  }, { passive: true });
+
+  // Hero bg subtle parallax
+  const heroBg = document.getElementById('heroBg');
+  setTimeout(() => heroBg.classList.add('loaded'), 100);
+
+  // Program tabs
+  function showDay(n) {
+    document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('day' + n).classList.add('active');
+    document.querySelectorAll('.tab-btn')[n - 1].classList.add('active');
+  }
+
+  // Scroll-reveal (lightweight)
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.track-card, .speaker-cell, .schedule-item, .info-block, .keynote-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(18px)';
+    el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
